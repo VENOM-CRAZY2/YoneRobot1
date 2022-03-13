@@ -7,7 +7,7 @@ import requests
 from time import sleep
 from telegram import ParseMode
 from Yone import dispatcher, updater, SUPPORT_CHAT
-from Yone.modules.log_channel import gloggable
+from Yone.Plugins.Admin.log_channel import gloggable
 from telegram import (CallbackQuery, Chat, MessageEntity, InlineKeyboardButton,
                       InlineKeyboardMarkup, Message, ParseMode, Update, Bot, User)
 
