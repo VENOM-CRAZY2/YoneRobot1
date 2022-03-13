@@ -3,12 +3,11 @@ import re
 import os
 import html
 import requests
-import Tianabot.modules.sql.kuki_sql as sql
 
 from time import sleep
 from telegram import ParseMode
-from Tianabot import dispatcher, updater, SUPPORT_CHAT
-from Tianabot.modules.log_channel import gloggable
+from Yone import dispatcher, updater, SUPPORT_CHAT
+from Yone.modules.log_channel import gloggable
 from telegram import (CallbackQuery, Chat, MessageEntity, InlineKeyboardButton,
                       InlineKeyboardMarkup, Message, ParseMode, Update, Bot, User)
 
@@ -18,8 +17,8 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
 
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 
-from Yone.modules.helper_funcs.filters import CustomFilters
-from Yone.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply 
+from Yone.Handlers.filters import CustomFilters
+from Yone.Handlers.chat_status import user_admin, user_admin_no_reply 
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
  
@@ -86,9 +85,6 @@ CHATBOT_HANDLER = MessageHandler(
 LIST_ALL_CHATS_HANDLER = CommandHandler(
     "allchats", list_all_chats, filters=CustomFilters.dev_filter)
 
-dispatcher.add_handler(ADD_CHAT_HANDLER)
-dispatcher.add_handler(CHATBOTK_HANDLER)
-dispatcher.add_handler(RM_CHAT_HANDLER)
 dispatcher.add_handler(LIST_ALL_CHATS_HANDLER)
 dispatcher.add_handler(CHATBOT_HANDLER)
 
