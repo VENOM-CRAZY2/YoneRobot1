@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, UnicodeText, Boolean, BigInteger
 
-from Yone.Database.sql import BASE, SESSION
+from Yone.Database import BASE, SESSION
 
 
 class AFK(BASE):
